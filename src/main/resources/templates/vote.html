@@ -11,6 +11,8 @@
             color: white;
             height: 500px;
             width: 8%;
+            display: block;
+            text-decoration: none;
         }
         #yes {
             float: left;
@@ -18,24 +20,25 @@
             color: white;
             height: 500px;
             width: 8%;
+            display: block;
+            text-decoration: none;
         }
         #voteimg {
             padding: 0 auto;
             float: left;
             width: 84%;
         }
+        #voteimg img {
+            width: 100%;
+        }
     </style>
     <meta name="theme-color" content="#FDC239" />
 </head>
 
 <body>
-    <div id="no">
-        <a target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">No</a>
-    </div>
-    <div id="voteimg"><img th:src="${voteimg}" width="100%"/></div>
-    <div id="yes">
-        <a target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">Yes</a>
-    </div>
+    <a id="No" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">No</a>
+    <div id="voteimg"><img th:src="${voteimg}"/></div>
+    <a id="Yes" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">Yes</a>
 </body>
 
 </html>

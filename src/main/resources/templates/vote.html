@@ -36,9 +36,9 @@
 </head>
 
 <body>
-    <a id="No" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">No</a>
+    <a id="No" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">&nbsp;</a>
     <div id="voteimg"><img th:src="${voteimg}"/></div>
-    <a id="Yes" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">Yes</a>
+    <a id="Yes" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">&nbsp;</a>
 </body>
 
 </html>

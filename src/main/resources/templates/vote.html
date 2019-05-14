@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <style>
+        body {
+            background: black;
+        }
+        #no {
+            float: left;
+            background: #e70a32;
+            color: white;
+            height: 500px;
+            width: 8%;
+        }
+        #yes {
+            float: left;
+            background: #4b5320;
+            color: white;
+            height: 500px;
+            width: 8%;
+        }
+        #voteimg {
+            padding: 0 auto;
+            float: left;
+            width: 84%;
+        }
+    </style>
+    <meta name="theme-color" content="#FDC239" />
+</head>
+
+<body>
+    <div id="no">
+        <a target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">No</a>
+    </div>
+    <div id="voteimg"><img th:src="${voteimg}" width="100%"/></div>
+    <div id="yes">
+        <a target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">Yes</a>
+    </div>
+</body>
+
+</html>

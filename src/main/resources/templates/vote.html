@@ -31,14 +31,51 @@
         #voteimg img {
             width: 100%;
         }
+        .padding {
+            padding-top: 10em;
+        }
+        /* only when orientation is in portrait mode */
+        @media all and (orientation:portrait) {
+            #portrait-warning {
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: #e70a32;
+                text-align: center;
+            }
+            #portrait-warning p {
+                color: white;
+                font-size: 4em;
+            }
+            #content {
+                display: none;
+            }
+        }
+        @media all and (orientation:landscape) {
+            #portrait-warning {
+                display: none;
+            }
+            #content {
+                display: block;
+            }
+        }
+
     </style>
     <meta name="theme-color" content="#FDC239" />
 </head>
 
 <body>
-    <a id="No" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">&nbsp;</a>
-    <div id="voteimg"><img th:src="${voteimg}"/></div>
-    <a id="Yes" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">&nbsp;</a>
+    <div id="portrait-warning">
+        <div class="padding"></div>
+        <p>🔄</p>
+        <p>Please rotate your phone</p>
+        <p>👍</p>
+    </div>
+    <div id="content">
+        <a id="No" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=false)}">&nbsp;</a>
+        <div id="voteimg"><img th:src="${voteimg}"/></div>
+        <a id="Yes" target="_self", th:href="@{/vote.html(currentPos=${currentPos},vote=true)}">&nbsp;</a>
+    </div>
 </body>
 
 </html>
